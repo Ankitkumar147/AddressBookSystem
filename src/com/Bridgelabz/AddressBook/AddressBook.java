@@ -15,6 +15,7 @@ public class AddressBook {
         do {
             System.out.println("Welcome to the Address Book.");
             System.out.println("Choose the desired options :--- \n 1. Add contact.\n 2. Edit contact. \n 3. Show.\n 4. Delete.");
+            System.out.println(" 5. Exit");
             int choice = sc2.nextInt();
             switch (choice) {
                 case 1:
@@ -31,6 +32,8 @@ public class AddressBook {
                 case 4:
                     deleteContact();
                     break;
+                case 5:
+                    isExit=true;
             }
         } while (!isExit);
     }
