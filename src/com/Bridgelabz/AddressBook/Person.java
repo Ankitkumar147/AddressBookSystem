@@ -63,6 +63,7 @@ public class Person {
     }
     @Override
     public String toString(){
-        return "[ Person ] { \n Full Name :- "+firstName+" "+lastName +"\n Address----> \n City :- "+city+"\n State :- "+state+"\n Postal Code :- "+zipCode+"\n Contact Details -----> "+"\n Phone NUmber :- "+phoneNumber+"\n Email Id :- "+email+ "\n}"+"\n<------------------------------>\n";
+        System.out.println("<------------------------->");
+        return " <--> Person. ] { \n Full Name :- "+firstName+" "+lastName +"\n Address-------------------------> \n City :- "+city+"\n State :- "+state+"\n Postal Code :- "+zipCode+"\n Contact Details ----------------> "+"\n Phone NUmber :- "+phoneNumber+"\n Email Id :- "+email+ "\n<------------------------------>\n";
     }
 }
