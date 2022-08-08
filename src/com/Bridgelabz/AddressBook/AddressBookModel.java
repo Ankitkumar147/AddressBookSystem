@@ -1,4 +1,5 @@
 package com.Bridgelabz.AddressBook;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.*;
@@ -8,18 +9,22 @@ public class AddressBookModel {
     private Map<String,Person> personMap;
 
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
     public Map<String, Person> getPersonMap() {
+
         return personMap;
     }
 
     public void setPersonMap(Map<String, Person> personMap) {
+
         this.personMap = personMap;
     }
 
