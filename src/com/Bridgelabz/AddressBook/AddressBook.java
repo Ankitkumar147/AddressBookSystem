@@ -13,9 +13,9 @@ public class AddressBook {
     public static void main(String[] args) {
         boolean isExit = false;
         do {
-            System.out.println("Welcome to the Address Book.");
+            System.out.println("\nWelcome to the Address Book.\n");
             System.out.println("Choose the desired options :--- \n 1. Add contact.\n 2. Edit contact. \n 3. Show.\n 4. Delete.");
-            System.out.println(" 5. Search. \n 6. View Person  . \n 7. Exit" );
+            System.out.println(" 5. Search. \n 6. View Person . \n 7. Count the persons by city Name. \n 8.Exit" );
             int choice = sc2.nextInt();
             switch (choice) {
                 case 1:
@@ -49,7 +49,13 @@ public class AddressBook {
                     System.out.println("Enter the City Name to view Person details :- ");
                     String nCity = sc2.next();
                     viewPersonByCity(nCity);
+                    break;
                 case 7:
+                    System.out.println("Enter the city name to count the person in city.:- ");
+                    String mCity = sc2.next();
+                    countByCity(mCity);
+                    break;
+                case 8:
                     isExit=true;
                     break;
                 default:
@@ -108,6 +114,11 @@ public class AddressBook {
         addressBookMap.entrySet().stream()
                 .filter(e -> e.getKey().equalsIgnoreCase(city))
                 .forEach(System.out::println);
+    }
+
+    private static void countByCity (String city) {
+        addressBookMap.entrySet().stream()
+                .forEach(placeName -> System.out.println("Count of person in " + city + " is " + addressBookMap.entrySet().stream().filter(e -> e.getKey().equalsIgnoreCase(city)).count()));
     }
 
     private static Person contactFields () {
