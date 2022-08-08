@@ -15,7 +15,7 @@ public class AddressBook {
         do {
             System.out.println("Welcome to the Address Book.");
             System.out.println("Choose the desired options :--- \n 1. Add contact.\n 2. Edit contact. \n 3. Show.\n 4. Delete.");
-            System.out.println(" 5. Search. \n 6. Exit.");
+            System.out.println(" 5. Search. \n 6. View Person  . \n 7. Exit" );
             int choice = sc2.nextInt();
             switch (choice) {
                 case 1:
@@ -46,6 +46,10 @@ public class AddressBook {
                     searchPerson(pCity);
                     break;
                 case 6:
+                    System.out.println("Enter the City Name to view Person details :- ");
+                    String nCity = sc2.next();
+                    viewPersonByCity(nCity);
+                case 7:
                     isExit=true;
                     break;
                 default:
@@ -96,6 +100,11 @@ public class AddressBook {
     }
 
     private static void searchPerson(String city) {
+        addressBookMap.entrySet().stream()
+                .filter(e -> e.getKey().equalsIgnoreCase(city))
+                .forEach(System.out::println);
+    }
+    private static void viewPersonByCity(String city){
         addressBookMap.entrySet().stream()
                 .filter(e -> e.getKey().equalsIgnoreCase(city))
                 .forEach(System.out::println);
